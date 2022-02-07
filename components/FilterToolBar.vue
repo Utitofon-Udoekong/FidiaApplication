@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 </script>
 <template>
+<!-- APP FILTER COMPONENT -->
     <div class="app-filter-component py-[27px] flex justify-between">
+        <!-- FILTER BUTTONS -->
         <div class="filter-component flex">
             <div
                 class="filter-chip bg-[#F9F5FF] rounded-lg text-brand-purple-700 TEXT-BASE font-medium py-[10px] px-4 flex items-center justify-center w-{110px} h-10"

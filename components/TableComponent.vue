@@ -14,7 +14,7 @@ const activities = [
     <div class="overflow-x-auto shadow-md sm:rounded-lg">
       <div class="inline-block min-w-full align-middle">
         <div class="">
-          <table class="min-w-full table-fixed">
+          <table class="min-w-full">
             <thead class="bg-white">
               <tr>
                 <th scope="col" class="py-3 pl-6 pr-3">
@@ -64,7 +64,7 @@ const activities = [
                   <CheckboxComponent checked="checked" />
                 </td>
                 <td class="text-sm font-medium text-gray-900 whitespace-nowrap">
-                  <div>
+                  <div class="flex">
                     <img
                       src="@/assets/images/companies/catalog.svg"
                       alt="Catalog"

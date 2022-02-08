@@ -90,7 +90,7 @@ const tableData = useTableData();
                   <div class="w-[88px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
-                      :style="`width: ${data.progress}%`"
+                      :style="`width: ${data.progress.lg}%`"
                     ></div>
                   </div>
                 </td>

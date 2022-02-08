@@ -1,11 +1,19 @@
-const useTableData = () => {
+// import useAssets from "./useAssets"
+
+// const assets = useAssets();
+export const useTableData = () => {
     return [
         {
-            imageUrl: "@/assets/images/companies/catalog.svg",
+            imageUrl: "companies/catalog.svg",
             title: "Catalog",
+            alt: "Catalog",
             subTitle: "catalogapp.io",
-            progress: 100,
+            progress: {
+                lg: 65.7,
+                sm: 51.51
+            },
             status: "Customer",
+            userGroup: "avatars/g1/Avatar",
             userCount: {
                 enabled: true,
                 value: "+5"
@@ -13,14 +21,20 @@ const useTableData = () => {
             About: {
                 title: "Content curating app",
                 subTitle: "Brings all your news into one place"
-            }
+            },
+            checked: "checked"
         },
         {
-            imageUrl: "@/assets/images/companies/circooles.svg",
+            imageUrl: "companies/circooles.svg",
             title: "Circooles",
+            alt: "Circooles",
             subTitle: "getcirooles.com",
-            progress: 58.19,
+            progress: {
+                lg: 58.19,
+                sm: 45.63
+            },
             status: "Churned",
+            userGroup: "avatars/g2/Avatar",
             userCount: {
                 enabled: true,
                 value: "+8"
@@ -28,14 +42,20 @@ const useTableData = () => {
             About: {
                 title: "Design software",
                 subTitle: "Super lightweight design app"
-            }
+            },
+            checked: "checked"
         },
         {
-            imageUrl: "@/assets/images/companies/commandr.svg",
+            imageUrl: "companies/commandr.svg",
             title: "Command+R",
+            alt: "Command+R",
             subTitle: "cmdr.ai",
-            progress: 35.42,
+            progress: {
+                lg: 35.42,
+                sm: 27.77
+            },
             status: "Customer",
+            userGroup: "avatars/g3/Avatar",
             userCount: {
                 enabled: true,
                 value: "+2"
@@ -43,14 +63,20 @@ const useTableData = () => {
             About: {
                 title: "Data prediction",
                 subTitle: "AI and machine learning data"
-            }
+            },
+            checked: "checked"
         },
         {
-            imageUrl: "@/assets/images/companies/hourglass.svg",
+            imageUrl: "companies/hourglass.svg",
             title: "Hourglass",
+            alt: "Hourglass",
             subTitle: "hourglass.app",
-            progress: 73.37,
+            progress: {
+                lg: 73.37,
+                sm: 57.53
+            },
             status: "Customer",
+            userGroup: "avatars/g4/Avatar",
             userCount: {
                 enabled: false,
                 value: null
@@ -58,14 +84,20 @@ const useTableData = () => {
             About: {
                 title: "Productivity app",
                 subTitle: "Time management and productivity"
-            }
+            },
+            checked: "unchecked"
         },
         {
-            imageUrl: "@/assets/images/companies/layers.svg",
+            imageUrl: "companies/layers.svg",
             title: "Layers",
+            alt: "Layers",
             subTitle: "getlayers.io",
-            progress: 27.83,
+            progress: {
+                lg: 27.83,
+                sm: 21.82
+            },
             status: "Churned",
+            userGroup: "avatars/g5/Avatar",
             userCount: {
                 enabled: true,
                 value: "+1"
@@ -73,23 +105,50 @@ const useTableData = () => {
             About: {
                 title: "Web app integrations",
                 subTitle: "Connect web apps seamlessly"
-            }
+            },
+            checked: "unchecked"
         },
         {
-            imageUrl: "@/assets/images/companies/quotient.svg",
+            imageUrl: "companies/quotient.svg",
             title: "Quotient",
+            alt: "Quotient",
             subTitle: "quotient.co",
-            progress: 19.75,
+            progress: {
+                lg: 19.75,
+                sm: 15.48
+            },
             status: "Customer",
+            userGroup: "avatars/g6/Avatar",
             userCount: {
                 enabled: true,
-                value: "+1"
+                value: "+6"
             },
             About: {
                 title: "Sales CRM",
-                subTitle: "Connect web apps seamlessly"
-            }
+                subTitle: "Web-based sales doc management"
+            },
+            checked: "checked"
         },
-
+        {
+            imageUrl: "companies/sisyphus.svg",
+            title: "Sisyphus",
+            alt: "Sisyphus",
+            subTitle: "sisyphus.com",
+            progress: {
+                lg: 43.17,
+                sm: 33.85
+            },
+            status: "Customer",
+            userGroup: "avatars/g7/Avatar",
+            userCount: {
+                enabled: true,
+                value: "+4"
+            },
+            About: {
+                title: "Automation and workflow",
+                subTitle: "Time tracking, invoicing and expenses"
+            },
+            checked: "checked"
+        },
     ]
 }

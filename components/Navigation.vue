@@ -5,15 +5,15 @@ const pages = usePages();
 
 </script>
 <template>
-    <div class="py-5 px-28 border-b-brand-gray border-b w-full flex justify-between">
+    <div class="py-5 sm:px-28 px-4 border-b-brand-gray border-b w-full flex justify-between items-center">
         <!-- APP NAVIGATIONS -->
         <div class="app-user-navigations flex">
             <div class="app-logo-title flex items-center mr-[29.73px]">
                 <img src="@/assets/images/logo.png" alt="Untitled UI Logo" class="mr-[10px]" />
-                <p class="text-gray-900 text-xl font-semibold">Untitled UI</p>
+                <p class="text-gray-900 text-xl font-medium">Untitled UI</p>
             </div>
             <nav class="app-navigation-links">
-                <ul class="flex items-center">
+                <ul class="hidden sm:flex items-center">
                     <!-- NAVIGATION PAGES -->
                     <span v-for="(page, index) in pages" :key="index">
                         <li
@@ -27,7 +27,7 @@ const pages = usePages();
             </nav>
         </div>
         <!-- CONTROL PANEL ITEMS -->
-        <div class="app-user-control-panel flex items-center h-full">
+        <div class="app-user-control-panel sm:flex items-center h-full hidden">
             <button
                 class="flex items-center w-[150px] h-10 py-[10px] px-4 rounded-lg border border-[#D0D5DD] justify-around"
             >
@@ -53,6 +53,9 @@ const pages = usePages();
             <div class="app-user-avatar rounded-full">
                 <img src="@/assets/images/Avatar.png" alt="User Avatar" />
             </div>
+        </div>
+        <div class="hamburger sm:hidden block">
+            <img src="@/assets/images/hamburger.svg" alt="Hamburger menu icon">
         </div>
     </div>
 </template>

@@ -1,17 +1,16 @@
 <script lang="ts" setup>
-import CheckboxComponent from '~~/components/CheckboxComponent.vue';
 </script>
 <template>
 <div class="">
     <header>
-    <Navigation/>
-    <Toolbar/>
+        <Navigation/>
+        <Toolbar/>
     </header>
-    <main class="px-28">
+    <main class="sm:px-28 px-4">
         <DashboardHeader/>
         <AppActivityCards/>
         <FilterToolBar/>
-        <div class="table-component vue">
+        <div class="table-component">
             <TableComponent/>
         </div>
     </main>

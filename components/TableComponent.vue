@@ -1,20 +1,15 @@
 <script lang="ts" setup>
-const activities = [
-  {
-    amount: "50,000",
-    description: "Fort Dolar Purchased",
-    date: new Date().toISOString().substr(0, 10),
-    time: new Date().toLocaleTimeString(),
-    status: "pending",
-  },
-];
+import { useTableData } from "~~/composables/useTableData";
+import Image from "./Image.vue";
+
+const tableData = useTableData();
 </script>
 <template>
-  <div class="flex flex-col mb-96">
+  <div class="flex flex-col mb-24">
     <div class="table-layout overflow-x-auto rounded-lg">
       <div class="inline-block min-w-full align-middle">
         <div class="">
-          <table class="min-w-full table-auto">
+          <table class="min-w-full table-auto divide-y divide-gray-200">
             <thead class="bg-white">
               <tr>
                 <th scope="col" class="py-3 pl-6 pr-3">
@@ -29,7 +24,7 @@ const activities = [
                     <img
                       src="@/assets/images/filter-down.svg"
                       alt="Filter Item Icon"
-                      class="ml-[7.33px]"
+                      class="ml-[7.33px] mr-[132px]"
                   /></span>
                 </th>
                 <th
@@ -40,7 +35,7 @@ const activities = [
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500"
+                  class="text-xs font-medium text-left text-gray-500 mr-6"
                 >
                   Status
                 </th>
@@ -65,32 +60,37 @@ const activities = [
               </tr>
             </thead>
             <tbody class="bg-white">
-              <tr class="py-4 w-full odd:bg-gray-50 even:bg-white">
-                <td class="w-14">
-                  <CheckboxComponent checked="checked" />
+              <tr
+                class="py-4 w-full odd:bg-gray-50 even:bg-white"
+                v-for="(data, index) in tableData"
+              >
+                <td class="w-4">
+                  <CheckboxComponent :checked="data.checked" />
                 </td>
                 <!-- company -->
                 <td
                   class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <div class="flex">
-                    <img
-                      src="@/assets/images/companies/catalog.svg"
-                      alt="Catalog"
-                      class="mr-4"
+                    <Image
+                      :path="data.imageUrl"
+                      :alt="data.alt"
+                      class="mr-4 w-10 h-10"
                     />
                     <div class="company-title">
-                      <p>Catalog</p>
-                      <p class="text-gray-500 font-normal">catalogapp.io</p>
+                      <p class="text-sm font-medium">{{ data.title }}</p>
+                      <p class="text-gray-500 font-normal">
+                        {{ data.subTitle }}
+                      </p>
                     </div>
                   </div>
                 </td>
                 <!-- License use -->
                 <td class="text-sm font-medium text-gray-500">
-                  <div class="progress-bar w-[88px] bg-gray-200 h-2 mb-6 rounded">
+                  <div class="w-[88px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
-                      style="width: 100%"
+                      :style="`width: ${data.progress}%`"
                     ></div>
                   </div>
                 </td>
@@ -99,9 +99,14 @@ const activities = [
                   class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <span
-                    class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#ECFDF3] text-brand-success"
+                    class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full"
+                    :class="
+                      data.status === 'Customer'
+                        ? 'bg-[#ECFDF3] text-brand-success'
+                        : 'bg-gray-100 text-gray-700'
+                    "
                   >
-                    Customer
+                    {{ data.status }}
                   </span>
                 </td>
                 <!-- Users -->
@@ -109,47 +114,71 @@ const activities = [
                   class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <div class="app-custom-users flex">
-                    <div class="avatar border-[1.5px] border-solid border-white rounded-full bg-white">
-                      <img src="@/assets/images/avatars/g1/Avatar1.png" width="24" height="24" alt="">
+                    <div
+                      class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
+                      :class="user === 1 ? '-ml-0' : '-ml-2'"
+                      v-for="user in 5"
+                    >
+                      <Image
+                        :path="data.userGroup + `${user}.png`"
+                        alt="User group Avatar"
+                        class="w-6 h-6"
+                      />
                     </div>
-                    <div class="avatar border-[1.5px] border-solid border-white rounded-full -ml-2 bg-white">
-                      <img src="@/assets/images/avatars/g1/Avatar2.png" width="24" height="24" alt="">
-                    </div>
-                    <div class="avatar border-[1.5px] border-solid border-white rounded-full -ml-2 bg-white">
-                      <img src="@/assets/images/avatars/g1/Avatar3.png" width="24" height="24" alt="">
-                    </div>
-                    <div class="avatar border-[1.5px] border-solid border-white rounded-full -ml-2 bg-white">
-                      <img src="@/assets/images/avatars/g1/Avatar4.png" width="24" height="24" alt="">
-                    </div>
-                    <div class="avatar border-[1.5px] border-solid border-white rounded-full -ml-2 bg-white">
-                      <img src="@/assets/images/avatars/g1/Avatar5.png" width="24" height="24" alt="">
-                    </div>
-                    <div class="avatar-count border-[1.5px] border-solid border-white rounded-full -ml-2 bg-[#F9F5FF] w-6 h-6 text-xs text-brand-purple-600 font-medium grid place-items-center">
-                      +5
+                    <div
+                      v-if="data.userCount.enabled"
+                      class="avatar-count border-[1.5px] border-solid border-white rounded-full -ml-2 bg-[#F9F5FF] w-6 h-6 text-xs text-brand-purple-600 font-medium grid place-items-center"
+                    >
+                      {{ data.userCount.value }}
                     </div>
                   </div>
                 </td>
                 <!-- About -->
                 <td class="py-4 text-sm font-medium whitespace-nowrap">
                   <div class="company-about-info">
-                    <p>Content curating app</p>
-                    <p class="text-gray-500 font-normal">Brings all your news into one place</p>
+                    <p>{{ data.About.title }}</p>
+                    <p class="text-gray-500 font-normal">
+                      {{ data.About.subTitle }}
+                    </p>
                   </div>
                 </td>
                 <!-- Actions -->
                 <td class="">
                   <div class="actions flex">
                     <div class="delete-icon mr-[28.17px] cursor-pointer">
-                      <img src="@/assets/images/trash.svg"  alt="Trash icon">
+                      <img src="@/assets/images/trash.svg" alt="Trash icon" />
                     </div>
                     <div class="edit-icon cursor-pointer">
-                      <img src="@/assets/images/edit.svg" alt="Edit icon">
+                      <img src="@/assets/images/edit.svg" alt="Edit icon" />
                     </div>
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
+          <div
+            class="py-[11px] px-6 table-controls h-full w-full flex items-center justify-between border border-t-gray-200"
+          >
+            <div class="table-control-cycle mb-[5px]">
+              <button
+                class="table-control previous border border-gray-300 rounded-md py-[9px] px-[17px] mr-3 text-gray-700 text-sm font-medium"
+              >
+                Previous
+              </button>
+              <button
+                class="table-control next border border-gray-300 rounded-md py-[9px] px-[17px] text-gray-700 text-sm font-medium"
+              >
+                Next
+              </button>
+            </div>
+            <div class="entries">
+              <p
+                class="text-right text-gray-700 text-sm font-normal whitespace-nowrap"
+              >
+                Page 1 of 10
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -160,5 +189,8 @@ const activities = [
   box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
     0px 2px 4px -2px rgba(16, 24, 40, 0.06);
   border: 1px solid #eaecf0;
+}
+.table-control {
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
 }
 </style>

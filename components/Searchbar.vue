@@ -2,7 +2,7 @@
 </script>
 <template>
     <div
-        class="app-search-bar rounded-lg border border-[#D0D5DD] flex w-80 h-11 px-[14px] py-[10px]"
+        class="app-search-bar rounded-lg border border-[#D0D5DD] flex w-full h-11 px-[14px] py-[10px]"
     >
         <img
             src="@/assets/images/search-icon.svg"

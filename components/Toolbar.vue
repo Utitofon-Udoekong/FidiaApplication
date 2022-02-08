@@ -5,7 +5,7 @@ const toolbars = useToolBars();
 </script>
 <template>
 <!-- USER TOOLBAR -->
-    <div class="py-3 px-28 border-b-brand-gray border-b flex items-center justify-between">
+    <div class="py-3 sm:px-28 px-4 border-b-brand-gray border-b hidden sm:flex items-center justify-between">
         <nav class="app-toolbar-links">
             <ul class="flex items-center">
                 <!-- NAVIGATION TOOLBARS -->
@@ -19,7 +19,9 @@ const toolbars = useToolBars();
                 </span>
             </ul>
         </nav>
-        <Searchbar/>
+        <div class="searchbar w-80">
+            <Searchbar/>
+        </div>
     </div>
 </template>
 <style>

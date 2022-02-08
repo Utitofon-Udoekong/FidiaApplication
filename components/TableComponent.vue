@@ -87,10 +87,16 @@ const tableData = useTableData();
                 </td>
                 <!-- License use -->
                 <td class="text-sm font-medium text-gray-500">
-                  <div class="w-[88px] bg-gray-200 h-2 rounded">
+                  <div class="hidden sm:block w-[88px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
                       :style="`width: ${data.progress.lg}%`"
+                    ></div>
+                  </div>
+                  <div class="block sm:hidden w-[69px] bg-gray-200 h-2 rounded">
+                    <div
+                      class="bg-brand-purple-600 h-full rounded"
+                      :style="`width: ${data.progress.sm}%`"
                     ></div>
                   </div>
                 </td>

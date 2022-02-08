@@ -23,7 +23,7 @@ const useTableData = () => {
             status: "Churned",
             userCount: {
                 enabled: true,
-                value: "+5"
+                value: "+8"
             },
             About: {
                 title: "Design software",
@@ -38,7 +38,7 @@ const useTableData = () => {
             status: "Customer",
             userCount: {
                 enabled: true,
-                value: "+5"
+                value: "+2"
             },
             About: {
                 title: "Data prediction",
@@ -52,13 +52,44 @@ const useTableData = () => {
             progress: 73.37,
             status: "Customer",
             userCount: {
-                enabled: true,
-                value: "+5"
+                enabled: false,
+                value: null
             },
             About: {
                 title: "Productivity app",
                 subTitle: "Time management and productivity"
             }
         },
+        {
+            imageUrl: "@/assets/images/companies/layers.svg",
+            title: "Layers",
+            subTitle: "getlayers.io",
+            progress: 27.83,
+            status: "Churned",
+            userCount: {
+                enabled: true,
+                value: "+1"
+            },
+            About: {
+                title: "Web app integrations",
+                subTitle: "Connect web apps seamlessly"
+            }
+        },
+        {
+            imageUrl: "@/assets/images/companies/quotient.svg",
+            title: "Quotient",
+            subTitle: "quotient.co",
+            progress: 19.75,
+            status: "Customer",
+            userCount: {
+                enabled: true,
+                value: "+1"
+            },
+            About: {
+                title: "Sales CRM",
+                subTitle: "Connect web apps seamlessly"
+            }
+        },
+
     ]
 }

@@ -6,7 +6,7 @@
         <div class="filter-component flex sm:items-center flex-col-reverse sm:flex-row">
             <div class="flex sm:items-center">
                 <div
-                    class="filter-chip bg-[#F9F5FF] rounded-2xl text-brand-purple-700 text-sm sm:text-base font-medium py-0.5 sm:py-[10px] pl-[10px] pr-2 sm:pl-4 sm:pr-4 flex items-center justify-center h-6 sm:h-10 w-[84px] sm:w-[110px]"
+                    class="filter-chip bg-[#F9F5FF] rounded-2xl text-brand-purple-700 text-sm sm:text-base font-medium py-0.5 sm:py-[10px] pl-[10px] pr-2 sm:pl-4 sm:pr-4 flex items-center justify-center h-6 sm:h-10 w-[84px] sm:w-[115px]"
                 >
                     <p class="pr-[7px] sm:pr-[13px]">All time</p>
                     <img class="hidden sm:block" src="@/assets/images/cancel-bg.svg" alt="cancel app process" />

@@ -5,12 +5,12 @@ import Image from "./Image.vue";
 const tableData = useTableData();
 </script>
 <template>
-  <div class="flex flex-col mb-24">
-    <div class="table-layout overflow-x-auto rounded-lg">
-      <div class="inline-block min-w-full align-middle">
+  <div class="flex flex-col sm:mb-24">
+    <div class="table-layout overflow-x-auto sm:rounded-lg">
+      <div class="inline-block w-full align-middle">
         <div class="">
-          <table class="min-w-full table-auto divide-y divide-gray-200">
-            <thead class="bg-white">
+          <table class="w-full table-auto">
+            <thead class="bg-white border border-b-gray-200">
               <tr>
                 <th scope="col" class="py-3 pl-6 pr-3">
                   <CheckboxFilterComponent />
@@ -35,7 +35,7 @@ const tableData = useTableData();
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500 mr-6"
+                  class="text-xs font-medium text-left text-gray-500"
                 >
                   Status
                 </th>
@@ -53,7 +53,7 @@ const tableData = useTableData();
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500"
+                  class="text-xs font-medium text-left text-gray-500 sr-only"
                 >
                   <div class="">Actions</div>
                 </th>
@@ -63,6 +63,7 @@ const tableData = useTableData();
               <tr
                 class="py-4 w-full odd:bg-gray-50 even:bg-white"
                 v-for="(data, index) in tableData"
+                :key="index"
               >
                 <td class="w-4">
                   <CheckboxComponent :checked="data.checked" />
@@ -163,7 +164,7 @@ const tableData = useTableData();
             </tbody>
           </table>
           <div
-            class="py-[11px] px-6 table-controls h-full w-full flex items-center justify-between border border-t-gray-200"
+            class="py-[11px] px-6 table-controls h-full w-full sm:flex items-center justify-between border border-t-gray-200 hidden"
           >
             <div class="table-control-cycle mb-[5px]">
               <button
@@ -186,6 +187,25 @@ const tableData = useTableData();
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-12 px-4">
+    <div
+      class="flex justify-between items-center border-t-gray-200 border-t  sm:hidden mt-6 pt-4 px-3"
+    >
+      <div class="previous cursor-pointer">
+        <img src="@/assets/images/left.svg" alt="Previous item toggle" />
+      </div>
+      <div class="entries">
+        <p
+          class="text-right text-gray-700 text-sm font-normal whitespace-nowrap"
+        >
+          Page 1 of 10
+        </p>
+      </div>
+      <div class="next cursor-pointer">
+        <img src="@/assets/images/right.svg" alt="Next item toggle" />
       </div>
     </div>
   </div>

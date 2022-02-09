@@ -11,7 +11,7 @@
         <AppActivityCards/>
         <FilterToolBar/>
             </main>
-       <section class="table sm:px-28 px-0">
+       <section class=" sm:px-28 px-0">
            <TableComponent/>
        </section>
 </div>

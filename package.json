@@ -15,7 +15,6 @@
   "dependencies": {
     "apexcharts": "^3.33.0",
     "unplugin-icons": "^0.13.0",
-    "unplugin-vue-components": "^0.17.16",
-    "vue3-apexcharts": "^1.4.1"
+    "unplugin-vue-components": "^0.17.16"
   }
 }

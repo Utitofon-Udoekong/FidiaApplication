@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useTableData } from '../composables/useTableData';
+import Image from './Image.vue';
 const tableData = useTableData();
 </script>
 
@@ -66,9 +67,8 @@ const tableData = useTableData();
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
                       <Image class="h-10 w-10 rounded-full"
-                        src="Avatar.png"
+                        path="companies/catalog.svg"
                         alt=""/>
-                      
                     </div>
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900 whitespace-nowrap">
@@ -163,11 +163,9 @@ const tableData = useTableData();
                  <div class="actions flex">
                     <div class="delete-icon mr-[28.17px] cursor-pointer">
                       <i-uil-trash-alt class="text-[#667085] w-[18px] h-5" />
-                      <!-- <img src="@/assets/images/trash.svg" alt="Trash icon" /> -->
                     </div>
                     <div class="edit-icon cursor-pointer">
                       <i-lucide-edit-2 class="text-[#667085] w-5 h-5"/>
-                      <!-- <img src="@/assets/images/edit.svg" alt="Edit icon" /> -->
                     </div>
                   </div>
                 </td>

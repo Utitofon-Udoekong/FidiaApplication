@@ -62,9 +62,11 @@ const tableData = useTableData();
               <tr class="odd:bg-gray-50 even:bg-white"
               v-for="(data, index) in tableData"
                 :key="index">
+                <!-- Filter -->
                 <td class="w-4 whitespace-nowrap">
                   <CheckboxComponent :checked="data.checked"/>
                 </td>
+                <!-- Company -->
                 <td class="py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
@@ -82,83 +84,66 @@ const tableData = useTableData();
                     </div>
                   </div>
                 </td>
+                <!-- License use -->
                 <td class="px-3 py-4 whitespace-nowrap">
-                  <div class="block  w-[88px] bg-gray-200 h-2 rounded">
+                  <div class="hidden sm:block  w-[88px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
-                      style="width: 51.19px"
+                      :style="`width: ${data.progress.lg}px`"
+                    ></div>
+                  </div>
+                  <div class="block sm:hidden w-[69px] bg-gray-200 h-2 rounded">
+                    <div
+                      class="bg-brand-purple-600 h-full rounded"
+                      :style="`width: ${data.progress.sm}px`"
                     ></div>
                   </div>
                 </td>
+                <!-- Status -->
                 <td class="px-3 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                   <span
                     class="px-2 py-1 inline-flex text-xs font-medium rounded-full bg-[#ECFDF3] text-brand-success"
+                    :class="
+                      data.status === 'Customer'
+                        ? 'bg-[#ECFDF3] text-brand-success'
+                        : 'bg-gray-100 text-gray-700'
+                    "
                   >
-                    Customer
+                    {{ data.status }}
                   </span>
                 </td>
+                <!-- Users -->
                 <td class="py-4 whitespace-nowrap text-sm text-gray-500">
                   <div class="app-custom-users flex">
                     <div
                       class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
+                      :class="user === 1 ? '-ml-0' : '-ml-2'"
+                      v-for="user in 5"
                     >
                       <Image
-                        :path="`avatars/g1/Avatar1.png`"
+                        :path="data.userGroup + `${user}.png`"
                         alt="User group Avatar"
                         class="w-6 h-6"
                       />
                     </div>
                     <div
-                      class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
-                    >
-                      <Image
-                        :path="`avatars/g1/Avatar1.png`"
-                        alt="User group Avatar"
-                        class="w-6 h-6"
-                      />
-                    </div>
-                    <div
-                      class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
-                    >
-                      <Image
-                        :path="`avatars/g1/Avatar1.png`"
-                        alt="User group Avatar"
-                        class="w-6 h-6"
-                      />
-                    </div>
-                    <div
-                      class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
-                    >
-                      <Image
-                        :path="`avatars/g1/Avatar1.png`"
-                        alt="User group Avatar"
-                        class="w-6 h-6"
-                      />
-                    </div>
-                    <div
-                      class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
-                    >
-                      <Image
-                        :path="`avatars/g1/Avatar1.png`"
-                        alt="User group Avatar"
-                        class="w-6 h-6"
-                      />
-                    </div>
-                    <div
+                      v-if="data.userCount.enabled"
                       class="whitespace-nowrap avatar-count border-[1.5px] border-solid border-white rounded-full -ml-2 bg-[#F9F5FF] w-6 h-6 text-xs text-brand-purple-600 font-medium grid place-items-center"
                     >
-                      +5
+                      {{ data.userCount.value }}
                     </div>
                   </div>
                 </td>
+                <!-- About -->
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   <div class="company-about-info">
-                    <p>ifhuierjore</p>
+                    <p>{{ data.About.title }}</p>
                     <p class="text-gray-500 font-normal">
-                      erfeererereerewerere
+                      {{ data.About.subTitle }}
                     </p>
                   </div>
                 </td>
+                <!-- Actions -->
                 <td
                   class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                 >

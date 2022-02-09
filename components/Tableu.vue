@@ -9,9 +9,9 @@ const tableData = useTableData();
     <div class="tabling overflow-x-auto sm:rounded-lg">
       <div class=" align-middle inline-block min-w-full">
         <div
-          class="overflow-hidden "
+          class="overflow-hidden"
         >
-          <table class="min-w-full ">
+          <table class="min-w-full">
             <thead class="bg-white border-b border-b-gray-200">
               <tr>
                 <th scope="col" class="pl-6 pr-3 py-3 text-xs font-medium text-left text-gray-500" >
@@ -19,7 +19,7 @@ const tableData = useTableData();
                 </th>
                 <th
                   scope="col"
-                  class="py-3 text-xs font-medium text-left text-gray-500"
+                  class=" py-3 text-xs font-medium text-left text-gray-500"
                 >
                   <span class="flex"
                     >Company
@@ -59,23 +59,25 @@ const tableData = useTableData();
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-              <tr class="odd:bg-gray-50 even:bg-white">
-                <td class="whitespace-nowrap">
-                  <CheckboxComponent checked="checked"/>
+              <tr class="odd:bg-gray-50 even:bg-white"
+              v-for="(data, index) in tableData"
+                :key="index">
+                <td class="w-4 whitespace-nowrap">
+                  <CheckboxComponent :checked="data.checked"/>
                 </td>
                 <td class="py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
                       <Image class="h-10 w-10 rounded-full"
-                        path="companies/catalog.svg"
-                        alt=""/>
+                        :path="data.imageUrl"
+                      :alt="data.alt"/>
                     </div>
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900 whitespace-nowrap">
-                        Jane Cooper
+                        {{ data.title }}
                       </div>
                       <div class="text-sm text-gray-500 font-normal">
-                        jane.cooper
+                        {{ data.subTitle }}
                       </div>
                     </div>
                   </div>

@@ -10,7 +10,7 @@ const tableData = useTableData();
       <div class="inline-block min-w-full align-middle">
         <div class="overflow-hidden">
           <table class="min-w-full">
-            <thead class="bg-white border border-b-gray-200">
+            <thead class="bg-white border-b border-b-gray-200">
               <tr>
                 <th scope="col" class="py-3 pl-6 pr-3">
                   <CheckboxFilterComponent />
@@ -106,7 +106,7 @@ const tableData = useTableData();
                   class="py-4 pr-6 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <span
-                    class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full"
+                    class="px-2 py-1 inline-flex text-xs font-medium rounded-full"
                     :class="
                       data.status === 'Customer'
                         ? 'bg-[#ECFDF3] text-brand-success'
@@ -118,7 +118,7 @@ const tableData = useTableData();
                 </td>
                 <!-- Users -->
                 <td
-                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap mx-10"
+                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <div class="app-custom-users flex">
                     <div

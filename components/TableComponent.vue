@@ -1,112 +1,108 @@
 <script lang="ts" setup>
-import { useTableData } from "~~/composables/useTableData";
-import Image from "./Image.vue";
-
+import { useTableData } from '../composables/useTableData';
+import Image from './Image.vue';
 const tableData = useTableData();
 </script>
+
 <template>
   <div class="flex flex-col sm:mb-24">
-    <div class="table-layout overflow-x-auto sm:rounded-lg">
-      <div class="inline-block min-w-full align-middle">
-        <div class="overflow-hidden">
+    <div class="tabling overflow-x-auto sm:rounded-lg">
+      <div class=" align-middle inline-block min-w-full">
+        <div
+          class="overflow-hidden"
+        >
           <table class="min-w-full">
             <thead class="bg-white border-b border-b-gray-200">
               <tr>
-                <th scope="col" class="py-3 pl-6 pr-3">
-                  <CheckboxFilterComponent />
+                <th scope="col" class="pl-6 pr-3 py-3 text-xs font-medium text-left text-gray-500" >
+                  <CheckboxFilterComponent/>
                 </th>
                 <th
                   scope="col"
-                  class="h-full text-xs font-medium text-left text-gray-500"
+                  class=" py-3 text-xs font-medium text-left text-gray-500"
                 >
                   <span class="flex"
                     >Company
                     <img
                       src="@/assets/images/filter-down.svg"
                       alt="Filter Item Icon"
-                      class="ml-[7.33px] mr-[132px]"
+                      class="ml-[7.33px] mr-[162px] sm:mr-[112px]"
                   /></span>
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500"
+                  class="px-3 py-3 text-xs font-medium text-left text-gray-500"
                 >
                   License use
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500"
+                  class="px-3 py-3 text-xs font-medium text-left text-gray-500"
                 >
                   Status
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500"
+                  class="pr-24 sm:pr-6 py-3 text-xs font-medium text-left text-gray-500"
                 >
                   Users
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500"
+                  class="px-6 py-3 text-xs font-medium text-left text-gray-500"
                 >
                   About
                 </th>
-                <th
-                  scope="col"
-                  class="text-xs font-medium text-left text-gray-500 sm:sr-only"
-                >
-                  <div class="">Actions</div>
+                <th scope="col" class="relative px-6 py-3">
+                  <span class="sr-only">Actions</span>
                 </th>
               </tr>
             </thead>
-            <tbody class="bg-white">
-              <tr
-                class="py-4 w-full odd:bg-gray-50 even:bg-white"
-                v-for="(data, index) in tableData"
-                :key="index"
-              >
-                <td class="w-4">
-                  <CheckboxComponent :checked="data.checked" />
+            <tbody class="bg-white divide-y divide-gray-200">
+              <tr class="odd:bg-gray-50 even:bg-white"
+              v-for="(data, index) in tableData"
+                :key="index">
+                <!-- Filter -->
+                <td class="w-4 whitespace-nowrap">
+                  <CheckboxComponent :checked="data.checked"/>
                 </td>
-                <!-- company -->
-                <td
-                  class="py-4 pr-8 text-sm font-medium text-gray-900 whitespace-nowrap"
-                >
-                  <div class="flex">
-                    <Image
-                      :path="data.imageUrl"
-                      :alt="data.alt"
-                      class="mr-4 w-10 h-10"
-                    />
-                    <div class="company-title">
-                      <p class="text-sm font-medium">{{ data.title }}</p>
-                      <p class="text-gray-500 font-normal">
+                <!-- Company -->
+                <td class="py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                      <Image class="h-10 w-10 rounded-full"
+                        :path="data.imageUrl"
+                      :alt="data.alt"/>
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900 whitespace-nowrap">
+                        {{ data.title }}
+                      </div>
+                      <div class="text-sm text-gray-500 font-normal">
                         {{ data.subTitle }}
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </td>
                 <!-- License use -->
-                <td class=" pr-6 text-sm font-medium text-gray-500 whitespace-nowrap">
-                  <div class="hidden sm:block w-[88px] bg-gray-200 h-2 rounded">
+                <td class="px-3 py-4 whitespace-nowrap">
+                  <div class="hidden sm:block  w-[88px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
-                      :style="`width: ${data.progress.lg}%`"
+                      :style="`width: ${data.progress.lg}px`"
                     ></div>
                   </div>
                   <div class="block sm:hidden w-[69px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
-                      :style="`width: ${data.progress.sm}%`"
+                      :style="`width: ${data.progress.sm}px`"
                     ></div>
                   </div>
                 </td>
                 <!-- Status -->
-                <td
-                  class="py-4 pr-6 text-sm font-medium text-gray-900 whitespace-nowrap"
-                >
+                <td class="px-3 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                   <span
-                    class="px-2 py-1 inline-flex text-xs font-medium rounded-full"
+                    class="px-2 py-1 inline-flex text-xs font-medium rounded-full bg-[#ECFDF3] text-brand-success"
                     :class="
                       data.status === 'Customer'
                         ? 'bg-[#ECFDF3] text-brand-success'
@@ -117,9 +113,7 @@ const tableData = useTableData();
                   </span>
                 </td>
                 <!-- Users -->
-                <td
-                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
-                >
+                <td class="py-4 whitespace-nowrap text-sm text-gray-500">
                   <div class="app-custom-users flex">
                     <div
                       class="avatar border-[1.5px] border-solid border-white rounded-full bg-white -ml-2"
@@ -141,7 +135,7 @@ const tableData = useTableData();
                   </div>
                 </td>
                 <!-- About -->
-                <td class="py-4 text-sm font-medium whitespace-nowrap">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   <div class="company-about-info">
                     <p>{{ data.About.title }}</p>
                     <p class="text-gray-500 font-normal">
@@ -150,17 +144,20 @@ const tableData = useTableData();
                   </div>
                 </td>
                 <!-- Actions -->
-                <td class="whitespace-nowrap">
-                  <div class="actions flex">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                >
+                 <div class="actions flex">
                     <div class="delete-icon mr-[28.17px] cursor-pointer">
-                      <img src="@/assets/images/trash.svg" width="15" alt="Trash icon" />
+                      <i-uil-trash-alt class="text-[#667085] w-[18px] h-5" />
                     </div>
                     <div class="edit-icon cursor-pointer">
-                      <img src="@/assets/images/edit.svg" width="16" alt="Edit icon" />
+                      <i-lucide-edit-2 class="text-[#667085] w-5 h-5"/>
                     </div>
                   </div>
                 </td>
               </tr>
+              <!-- More people... -->
             </tbody>
           </table>
           <div
@@ -211,7 +208,7 @@ const tableData = useTableData();
   </div>
 </template>
 <style>
-.table-layout {
+.tabling{
   box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
     0px 2px 4px -2px rgba(16, 24, 40, 0.06);
   border: 1px solid #eaecf0;

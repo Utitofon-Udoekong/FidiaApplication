@@ -12,7 +12,7 @@ const appActivities = useAppActivities();
                 <p class="text-base font-medium text-gray-900">{{appActivity.title}}</p>
                 <img src="@/assets/images/more-vert.svg" alt="More Vertical Options" class="cursor-pointer"/>
             </span>
-            <div class="app-activity">
+            <div class="app-activity flex justify-between items-end">
                 <div class="app-activity-numbers">
                     <p class="text-3xl sm:text-4xl font-semibold text-gray-900 pt-5 sm:pt-6 pb-4">{{appActivity.total_activity}}</p>
                     <span class="flex items-center">
@@ -25,7 +25,14 @@ const appActivities = useAppActivities();
                         </p>
                     </span>
                 </div>
-                <div class="app-activity-graph"></div>
+                <div class="app-activity-graph hidden sm:block">
+                    <img v-if="appActivity.profit_or_loss === 'profit'" src="@/assets/images/upchart-bg.png" alt="upchart-bg">
+                    <img v-else src="@/assets/images/downchart-bg.png" alt="downchart-bg">
+                </div>
+                <div class="app-activity-graph block sm:hidden">
+                    <img v-if="appActivity.profit_or_loss === 'profit'" src="@/assets/images/upchart-sm.png" alt="upchart-sm">
+                    <img v-else src="@/assets/images/downchart-sm.png" alt="downchart-sm">
+                </div>
             </div>
         </div>
     </div>

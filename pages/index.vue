@@ -12,7 +12,7 @@
         <FilterToolBar/>
             </main>
        <section class="w-full sm:px-28 px-0">
-           <Tableu/>
+           <TableComponent/>
        </section>
 </div>
 </template>

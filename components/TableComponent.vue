@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useTableData } from '../composables/useTableData';
-import Image from './Image.vue';
+import Image from './SVGImage.vue';
 const tableData = useTableData();
 </script>
 
@@ -70,7 +70,7 @@ const tableData = useTableData();
                 <td class="py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
-                      <Image class="h-10 w-10 rounded-full"
+                      <SVGImage class="h-10 w-10 rounded-full"
                         :path="data.imageUrl"
                       :alt="data.alt"/>
                     </div>
@@ -120,7 +120,7 @@ const tableData = useTableData();
                       :class="user === 1 ? '-ml-0' : '-ml-2'"
                       v-for="user in 5"
                     >
-                      <Image
+                      <PNGImage
                         :path="data.userGroup + `${user}`"
                         alt="User group Avatar"
                         class="w-6 h-6"

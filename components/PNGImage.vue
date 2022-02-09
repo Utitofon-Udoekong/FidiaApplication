@@ -1,4 +1,4 @@
-<script setup>
+<script setup >
 import { ref, watchEffect } from 'vue'
 
 const props = defineProps({
@@ -10,7 +10,7 @@ const props = defineProps({
 const image = ref()
 
 watchEffect(async () => {
-  image.value = (await import(/* @vite-ignore */ `../assets/images/${props.path}.{svg,png}`)).default
+  image.value = (await import(/* @vite-ignore */ `../assets/images/${props.path}.png`)).default
 })
 </script>
 

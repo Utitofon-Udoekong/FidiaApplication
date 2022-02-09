@@ -10,7 +10,7 @@ const props = defineProps({
 const image = ref()
 
 watchEffect(async () => {
-  image.value = (await import(/* @vite-ignore */ `../assets/images/${props.path}`)).default
+  image.value = (await import(/* @vite-ignore */ `../assets/images/${props.path}.{svg,png}`)).default
 })
 </script>
 

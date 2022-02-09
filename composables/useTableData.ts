@@ -1,7 +1,7 @@
 export const useTableData = () => {
     return [
         {
-            imageUrl: "companies/catalog.svg",
+            imageUrl: "companies/catalog",
             title: "Catalog",
             alt: "Catalog",
             subTitle: "catalogapp.io",
@@ -22,7 +22,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "companies/circooles.svg",
+            imageUrl: "companies/circooles",
             title: "Circooles",
             alt: "Circooles",
             subTitle: "getcirooles.com",
@@ -43,7 +43,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "companies/commandr.svg",
+            imageUrl: "companies/commandr",
             title: "Command+R",
             alt: "Command+R",
             subTitle: "cmdr.ai",
@@ -64,7 +64,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "companies/hourglass.svg",
+            imageUrl: "companies/hourglass",
             title: "Hourglass",
             alt: "Hourglass",
             subTitle: "hourglass.app",
@@ -85,7 +85,7 @@ export const useTableData = () => {
             checked: "unchecked"
         },
         {
-            imageUrl: "companies/layers.svg",
+            imageUrl: "companies/layers",
             title: "Layers",
             alt: "Layers",
             subTitle: "getlayers.io",
@@ -106,7 +106,7 @@ export const useTableData = () => {
             checked: "unchecked"
         },
         {
-            imageUrl: "companies/quotient.svg",
+            imageUrl: "companies/quotient",
             title: "Quotient",
             alt: "Quotient",
             subTitle: "quotient.co",
@@ -127,7 +127,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "companies/sisyphus.svg",
+            imageUrl: "companies/sisyphus",
             title: "Sisyphus",
             alt: "Sisyphus",
             subTitle: "sisyphus.com",

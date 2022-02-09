@@ -121,7 +121,7 @@ const tableData = useTableData();
                       v-for="user in 5"
                     >
                       <Image
-                        :path="data.userGroup + `${user}.png`"
+                        :path="data.userGroup + `${user}`"
                         alt="User group Avatar"
                         class="w-6 h-6"
                       />

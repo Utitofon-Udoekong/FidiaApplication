@@ -7,9 +7,9 @@ const tableData = useTableData();
 <template>
   <div class="flex flex-col sm:mb-24">
     <div class="table-layout overflow-x-auto sm:rounded-lg">
-      <div class="inline-block w-full align-middle">
-        <div class="">
-          <table class="w-full table-auto">
+      <div class="inline-block min-w-full align-middle">
+        <div class="overflow-hidden">
+          <table class="min-w-full">
             <thead class="bg-white border border-b-gray-200">
               <tr>
                 <th scope="col" class="py-3 pl-6 pr-3">
@@ -53,7 +53,7 @@ const tableData = useTableData();
                 </th>
                 <th
                   scope="col"
-                  class="text-xs font-medium text-left text-gray-500 sr-only"
+                  class="text-xs font-medium text-left text-gray-500 sm:sr-only"
                 >
                   <div class="">Actions</div>
                 </th>
@@ -70,7 +70,7 @@ const tableData = useTableData();
                 </td>
                 <!-- company -->
                 <td
-                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
+                  class="py-4 pr-8 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <div class="flex">
                     <Image
@@ -87,7 +87,7 @@ const tableData = useTableData();
                   </div>
                 </td>
                 <!-- License use -->
-                <td class="text-sm font-medium text-gray-500">
+                <td class=" pr-6 text-sm font-medium text-gray-500 whitespace-nowrap">
                   <div class="hidden sm:block w-[88px] bg-gray-200 h-2 rounded">
                     <div
                       class="bg-brand-purple-600 h-full rounded"
@@ -103,7 +103,7 @@ const tableData = useTableData();
                 </td>
                 <!-- Status -->
                 <td
-                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
+                  class="py-4 pr-6 text-sm font-medium text-gray-900 whitespace-nowrap"
                 >
                   <span
                     class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full"
@@ -118,7 +118,7 @@ const tableData = useTableData();
                 </td>
                 <!-- Users -->
                 <td
-                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap"
+                  class="py-4 text-sm font-medium text-gray-900 whitespace-nowrap mx-10"
                 >
                   <div class="app-custom-users flex">
                     <div
@@ -134,7 +134,7 @@ const tableData = useTableData();
                     </div>
                     <div
                       v-if="data.userCount.enabled"
-                      class="avatar-count border-[1.5px] border-solid border-white rounded-full -ml-2 bg-[#F9F5FF] w-6 h-6 text-xs text-brand-purple-600 font-medium grid place-items-center"
+                      class="whitespace-nowrap avatar-count border-[1.5px] border-solid border-white rounded-full -ml-2 bg-[#F9F5FF] w-6 h-6 text-xs text-brand-purple-600 font-medium grid place-items-center"
                     >
                       {{ data.userCount.value }}
                     </div>
@@ -150,13 +150,13 @@ const tableData = useTableData();
                   </div>
                 </td>
                 <!-- Actions -->
-                <td class="">
+                <td class="whitespace-nowrap">
                   <div class="actions flex">
                     <div class="delete-icon mr-[28.17px] cursor-pointer">
-                      <img src="@/assets/images/trash.svg" alt="Trash icon" />
+                      <img src="@/assets/images/trash.svg" width="15" alt="Trash icon" />
                     </div>
                     <div class="edit-icon cursor-pointer">
-                      <img src="@/assets/images/edit.svg" alt="Edit icon" />
+                      <img src="@/assets/images/edit.svg" width="16" alt="Edit icon" />
                     </div>
                   </div>
                 </td>

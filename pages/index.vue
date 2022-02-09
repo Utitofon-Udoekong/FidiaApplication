@@ -11,8 +11,8 @@
         <AppActivityCards/>
         <FilterToolBar/>
             </main>
-       <section class=" sm:px-28 px-0">
-           <TableComponent/>
+       <section class="w-full sm:px-28 px-0">
+           <Tableu/>
        </section>
 </div>
 </template>

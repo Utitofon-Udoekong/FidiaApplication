@@ -1,6 +1,3 @@
-// import useAssets from "./useAssets"
-
-// const assets = useAssets();
 export const useTableData = () => {
     return [
         {

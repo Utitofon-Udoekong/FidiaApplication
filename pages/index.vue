@@ -10,10 +10,10 @@
         <DashboardHeader/>
         <AppActivityCards/>
         <FilterToolBar/>
-        <div class="table-component">
-            <TableComponent/>
-        </div>
-    </main>
+            </main>
+       <section class="table sm:px-28 px-0">
+           <TableComponent/>
+       </section>
 </div>
 </template>
 <style>

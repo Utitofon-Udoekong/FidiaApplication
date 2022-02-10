@@ -1,10 +1,10 @@
-<script setup >
+<script setup>
 import { ref, watchEffect } from 'vue'
 
 const props = defineProps({
-  path: String,
-  alt: String,
-  css: String,
+  path: {type: String},
+  alt: {type: String},
+  css: {type:String},
 })
 
 const image = ref()

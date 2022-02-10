@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useTableData } from '../composables/useTableData';
-import Image from './SVGImage.vue';
 const tableData = useTableData();
 </script>
 
@@ -53,7 +52,7 @@ const tableData = useTableData();
                 >
                   About
                 </th>
-                <th scope="col" class="relative px-6 py-3">
+                <th scope="col" class="relative px-3 py-3">
                   <span class="sr-only">Actions</span>
                 </th>
               </tr>
@@ -145,7 +144,7 @@ const tableData = useTableData();
                 </td>
                 <!-- Actions -->
                 <td
-                  class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                  class="px-3 py-4 whitespace-nowrap text-right text-sm font-medium"
                 >
                  <div class="actions flex">
                     <div class="delete-icon mr-[28.17px] cursor-pointer">

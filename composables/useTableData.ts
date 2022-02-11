@@ -1,7 +1,7 @@
 export const useTableData = () => {
     return [
         {
-            imageUrl: "images/companies/catalog",
+            imageUrl: "companies/catalog.svg",
             title: "Catalog",
             alt: "Catalog",
             subTitle: "catalogapp.io",
@@ -10,7 +10,7 @@ export const useTableData = () => {
                 sm: 51.51
             },
             status: "Customer",
-            userGroup: "images/avatars/g1/Avatar",
+            userGroup: "g1/Avatar",
             userCount: {
                 enabled: true,
                 value: "+5"
@@ -22,7 +22,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "images/companies/circooles",
+            imageUrl: "companies/circooles.svg",
             title: "Circooles",
             alt: "Circooles",
             subTitle: "getcirooles.com",
@@ -31,7 +31,7 @@ export const useTableData = () => {
                 sm: 45.63
             },
             status: "Churned",
-            userGroup: "images/avatars/g2/Avatar",
+            userGroup: "g2/Avatar",
             userCount: {
                 enabled: true,
                 value: "+8"
@@ -43,7 +43,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "images/companies/commandr",
+            imageUrl: "companies/commandr.svg",
             title: "Command+R",
             alt: "Command+R",
             subTitle: "cmdr.ai",
@@ -52,7 +52,7 @@ export const useTableData = () => {
                 sm: 27.77
             },
             status: "Customer",
-            userGroup: "images/avatars/g3/Avatar",
+            userGroup: "g3/Avatar",
             userCount: {
                 enabled: true,
                 value: "+2"
@@ -64,7 +64,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "images/companies/hourglass",
+            imageUrl: "companies/hourglass.svg",
             title: "Hourglass",
             alt: "Hourglass",
             subTitle: "hourglass.app",
@@ -73,7 +73,7 @@ export const useTableData = () => {
                 sm: 57.53
             },
             status: "Customer",
-            userGroup: "images/avatars/g4/Avatar",
+            userGroup: "g4/Avatar",
             userCount: {
                 enabled: false,
                 value: null
@@ -85,7 +85,7 @@ export const useTableData = () => {
             checked: "unchecked"
         },
         {
-            imageUrl: "images/companies/layers",
+            imageUrl: "companies/layers.svg",
             title: "Layers",
             alt: "Layers",
             subTitle: "getlayers.io",
@@ -94,7 +94,7 @@ export const useTableData = () => {
                 sm: 21.82
             },
             status: "Churned",
-            userGroup: "images/avatars/g5/Avatar",
+            userGroup: "g5/Avatar",
             userCount: {
                 enabled: true,
                 value: "+1"
@@ -106,7 +106,7 @@ export const useTableData = () => {
             checked: "unchecked"
         },
         {
-            imageUrl: "images/companies/quotient",
+            imageUrl: "companies/quotient.svg",
             title: "Quotient",
             alt: "Quotient",
             subTitle: "quotient.co",
@@ -115,7 +115,7 @@ export const useTableData = () => {
                 sm: 15.48
             },
             status: "Customer",
-            userGroup: "images/avatars/g6/Avatar",
+            userGroup: "g6/Avatar",
             userCount: {
                 enabled: true,
                 value: "+6"
@@ -127,7 +127,7 @@ export const useTableData = () => {
             checked: "checked"
         },
         {
-            imageUrl: "images/companies/sisyphus",
+            imageUrl: "companies/sisyphus.svg",
             title: "Sisyphus",
             alt: "Sisyphus",
             subTitle: "sisyphus.com",
@@ -136,7 +136,7 @@ export const useTableData = () => {
                 sm: 33.85
             },
             status: "Customer",
-            userGroup: "images/avatars/g7/Avatar",
+            userGroup: "g7/Avatar",
             userCount: {
                 enabled: true,
                 value: "+4"
